@@ -1,0 +1,6 @@
+{
+  "backup": {
+    "cron": "26 13 * * *",
+    "command": "bash $HOME/backup/backup.sh"
+  }
+}

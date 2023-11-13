@@ -1,0 +1,10 @@
+# ---------> Minutos
+# |  -------> Horas
+# | |  -----> Día del mes
+# | | |  ---> Mes
+# | | | |  -> Día de la semana
+# | | | | |
+# * * * * *
+
+backup 26 13 * * * bash $HOME/backup/backup.sh
+prueba * * * * *
