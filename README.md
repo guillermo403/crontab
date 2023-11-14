@@ -1,6 +1,6 @@
 # Crontab
 
-Aplicación de node que simula un crontab para automatizar la ejecución de tareas
+Aplicación de node que simula un crontab para automatizar la ejecución de tareas. Tiene una tarea que ejecuta una copia de seguridad y la sube a MEGA.
 
 - [Crontab](#crontab)
   - [Añadir una tarea nueva](#añadir-una-tarea-nueva)

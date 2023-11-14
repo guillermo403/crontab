@@ -1,4 +1,4 @@
-# ---------> Minutos
+#  ---------> Minutos
 # |  -------> Horas
 # | |  -----> Día del mes
 # | | |  ---> Mes
@@ -6,5 +6,5 @@
 # | | | | |
 # * * * * *
 
-backup 26 13 * * * bash $HOME/backup/backup.sh
-prueba * * * * *
+backup 26 13 * * * bash $HOME/backup/backup.sh # Ejecuta el comando indicado
+backup 30 18 * * * # Ejecuta la función definida en 'jobs-actions.js'
