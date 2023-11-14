@@ -1,6 +1,6 @@
 import executeCommand from './lib/execute-command.js'
 import jobsActions from './lib/jobs-actions.js'
-import logger from './lib/logger.js'
+import logger from './lib/logger/logger.js'
 
 export default async function (jobs) {
   for (const key in jobs) {

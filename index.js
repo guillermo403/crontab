@@ -1,5 +1,5 @@
 import getJobs from './src/lib/get-jobs.js'
-import logger from './src/lib/logger.js'
+import logger from './src/lib/logger/logger.js'
 import loop from './src/loop.js'
 
 getJobs()

@@ -1,5 +1,5 @@
 import executeLoop from './execute-loop.js'
-import { ONE_SECOND } from './lib/time.js'
+import { ONE_SECOND } from './lib/utils/time.js'
 const loopInterval = ONE_SECOND * 3
 
 let jobs = {}

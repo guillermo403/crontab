@@ -1,22 +1,22 @@
 import fs from 'fs/promises'
 import { join } from 'path'
-import { cronToJson } from './convert.js'
+import { cronToJson } from './utils/convert.js'
+import { exists } from './file-exists.js'
+import { getRootPath } from './utils/get-root-path.js'
 
 export default async function () {
   const jobsFileNames = ['jobs.json', 'jobs']
-  let jobsPath = join(
-    import.meta.url.replace('file://', ''),
-    '..',
-    '..',
-    '..'
-  )
+  const rootPath = getRootPath()
+  let jobsPath
 
   for await (const jobsFile of jobsFileNames) {
-    if (await exists(join(jobsPath, jobsFile))) {
-      jobsPath = join(jobsPath, jobsFile)
+    if (await exists(join(rootPath, jobsFile))) {
+      jobsPath = join(rootPath, jobsFile)
       break
     }
   }
+
+  if (!jobsPath) throw new Error('Jobs file not found')
 
   const jobs = await fs.readFile(jobsPath, 'utf-8')
 
@@ -37,10 +37,4 @@ export default async function () {
   } catch (error) {
     return {}
   }
-}
-
-async function exists (filePath) {
-  return fs.access(filePath)
-    .then(() => true)
-    .catch(() => false)
 }
